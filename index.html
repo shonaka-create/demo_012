@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大阪たこ焼き屋 ｜ 本場 大阪・道頓堀の味</title>
+<meta name="description" content="本場大阪の味を焼きたてアツアツで。外はカリッ、中はとろ〜りの大阪たこ焼き屋。お品書き・アクセス・お問い合わせはこちら。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=RocknRoll+One&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: "Zen Maru Gothic", sans-serif; color: #231812; background: #FFF6E9; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  img { display: block; }
+  input, textarea, button { font-family: inherit; }
+  section[id] { scroll-margin-top: 92px; }
+  @keyframes sway { 0%,100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+  @keyframes floatUp { 0% { opacity: 0; transform: translateY(24px); } 100% { opacity: 1; transform: translateY(0); } }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .reveal { animation: floatUp .8s cubic-bezier(.2,.7,.3,1) both; }
+  .r1 { animation-delay: .05s; } .r2 { animation-delay: .2s; } .r3 { animation-delay: .35s; } .r4 { animation-delay: .5s; }
+  @media (min-width: 921px) { #hamburger { display: none !important; } }
+  @media (max-width: 920px) { #nav-links { display: none !important; } }
+  #mobile-menu { display: none; }
+  #mobile-menu.open { display: flex; }
+</style>
+</head>
+<body>
+
+<div style="position:relative;">
+
+  <!-- ===== 紅白幕 トップアクセント ===== -->
+  <div style="height:14px; background: repeating-linear-gradient(90deg, #D81F2A 0 30px, #FFF6E9 30px 60px); position:fixed; top:0; left:0; right:0; z-index:60;"></div>
+
+  <!-- ===== ヘッダー ===== -->
+  <header style="position:fixed; top:14px; left:0; right:0; z-index:55; height:66px; background:rgba(255,246,233,.94); backdrop-filter:blur(8px); border-bottom:2px solid #231812; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(16px,4vw,40px);">
+    <a href="#home" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+      <span style="width:38px; height:38px; border-radius:50%; background:#D81F2A; display:flex; align-items:center; justify-content:center; color:#FFF6E9; font-family:'Yuji Syuku',serif; font-size:22px; box-shadow:0 2px 0 #A8141E;">蛸</span>
+      <span style="font-family:'Yuji Syuku',serif; font-size:24px; color:#231812; letter-spacing:1px;">大阪たこ焼き屋</span>
+    </a>
+    <nav id="nav-links" style="display:flex; align-items:center; gap:26px;">
+      <a href="#about" style="text-decoration:none; color:#231812; font-weight:700; font-size:15px;">店舗紹介</a>
+      <a href="#menu" style="text-decoration:none; color:#231812; font-weight:700; font-size:15px;">お品書き</a>
+      <a href="#access" style="text-decoration:none; color:#231812; font-weight:700; font-size:15px;">アクセス</a>
+      <a href="#contact" style="text-decoration:none; background:#D81F2A; color:#FFF6E9; font-weight:700; font-size:15px; padding:9px 18px; border-radius:30px; box-shadow:0 3px 0 #A8141E;">お問い合わせ</a>
+    </nav>
+    <button id="hamburger" aria-label="メニュー" style="display:flex; flex-direction:column; gap:5px; background:#D81F2A; border:none; padding:11px; border-radius:10px; cursor:pointer; box-shadow:0 3px 0 #A8141E;">
+      <span style="width:22px; height:3px; background:#FFF6E9; border-radius:2px;"></span>
+      <span style="width:22px; height:3px; background:#FFF6E9; border-radius:2px;"></span>
+      <span style="width:22px; height:3px; background:#FFF6E9; border-radius:2px;"></span>
+    </button>
+  </header>
+
+  <!-- ===== モバイルメニュー オーバーレイ ===== -->
+  <div id="mobile-menu" style="position:fixed; inset:0; z-index:70; background:rgba(35,24,18,.97); flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+    <button id="menu-close" aria-label="閉じる" style="position:absolute; top:24px; right:24px; width:46px; height:46px; border-radius:50%; background:#D81F2A; border:none; color:#FFF6E9; font-size:24px; cursor:pointer;">×</button>
+    <span style="font-family:'Yuji Syuku',serif; color:#F2B11C; font-size:30px; margin-bottom:18px;">お品書き</span>
+    <a href="#about" style="text-decoration:none; color:#FFF6E9; font-family:'RocknRoll One',sans-serif; font-size:26px; padding:14px;">店舗紹介</a>
+    <a href="#menu" style="text-decoration:none; color:#FFF6E9; font-family:'RocknRoll One',sans-serif; font-size:26px; padding:14px;">メニュー</a>
+    <a href="#access" style="text-decoration:none; color:#FFF6E9; font-family:'RocknRoll One',sans-serif; font-size:26px; padding:14px;">アクセス</a>
+    <a href="#contact" style="text-decoration:none; color:#231812; background:#F2B11C; font-family:'RocknRoll One',sans-serif; font-size:24px; padding:14px 34px; border-radius:34px; margin-top:14px;">お問い合わせ</a>
+  </div>
+
+  <!-- ===== ヒーロー ===== -->
+  <section id="home" style="position:relative; min-height:100vh; padding:140px 20px 80px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; overflow:hidden; background:linear-gradient(rgba(20,12,8,.42), rgba(20,12,8,.62)), url('assets/takoyaki-hero.jpg') center/cover no-repeat;">
+
+    <!-- 提灯 -->
+    <div style="position:absolute; top:96px; left:8%; transform-origin:top center; animation:sway 4s ease-in-out infinite;">
+      <div style="width:2px; height:30px; background:#231812; margin:0 auto;"></div>
+      <div style="width:64px; height:82px; border-radius:50%/46%; background:radial-gradient(circle at 50% 38%, #E8323C, #C2151E); background-image:repeating-linear-gradient(transparent 0 12px, rgba(0,0,0,.14) 12px 14px); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 14px rgba(0,0,0,.25), 0 6px 18px rgba(0,0,0,.35); position:relative;">
+        <div style="position:absolute; top:-5px; left:50%; transform:translateX(-50%); width:30px; height:8px; background:#231812; border-radius:3px;"></div>
+        <div style="position:absolute; bottom:-5px; left:50%; transform:translateX(-50%); width:24px; height:8px; background:#231812; border-radius:3px;"></div>
+        <span style="font-family:'Yuji Syuku',serif; color:#FFF6E9; font-size:30px; text-shadow:0 1px 2px rgba(0,0,0,.4);">た</span>
+      </div>
+    </div>
+    <div style="position:absolute; top:88px; right:9%; transform-origin:top center; animation:sway 4.6s ease-in-out infinite .6s;">
+      <div style="width:2px; height:40px; background:#231812; margin:0 auto;"></div>
+      <div style="width:64px; height:82px; border-radius:50%/46%; background:radial-gradient(circle at 50% 38%, #E8323C, #C2151E); background-image:repeating-linear-gradient(transparent 0 12px, rgba(0,0,0,.14) 12px 14px); display:flex; align-items:center; justify-content:center; box-shadow:inset 0 0 14px rgba(0,0,0,.25), 0 6px 18px rgba(0,0,0,.35); position:relative;">
+        <div style="position:absolute; top:-5px; left:50%; transform:translateX(-50%); width:30px; height:8px; background:#231812; border-radius:3px;"></div>
+        <div style="position:absolute; bottom:-5px; left:50%; transform:translateX(-50%); width:24px; height:8px; background:#231812; border-radius:3px;"></div>
+        <span style="font-family:'Yuji Syuku',serif; color:#FFF6E9; font-size:30px; text-shadow:0 1px 2px rgba(0,0,0,.4);">こ</span>
+      </div>
+    </div>
+
+    <span class="reveal r1" style="display:inline-block; background:#F2B11C; color:#231812; font-weight:700; font-size:14px; letter-spacing:3px; padding:7px 18px; border-radius:30px; margin-bottom:22px;">本場 大阪・道頓堀の味</span>
+    <h1 class="reveal r2" style="margin:0; font-family:'Yuji Syuku',serif; color:#FFF6E9; font-size:clamp(48px,11vw,128px); line-height:1.05; text-shadow:0 4px 24px rgba(0,0,0,.5); letter-spacing:2px;">大阪たこ焼き屋</h1>
+    <p class="reveal r3" style="margin:22px 0 0; color:#FFF6E9; font-size:clamp(17px,2.4vw,24px); font-weight:700; text-shadow:0 2px 12px rgba(0,0,0,.6);">アツアツ、とろ〜り。<br>外はカリッ、中はとろける本場の味。</p>
+    <div class="reveal r4" style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:36px;">
+      <a href="#menu" style="text-decoration:none; background:#D81F2A; color:#FFF6E9; font-family:'RocknRoll One',sans-serif; font-size:18px; padding:15px 34px; border-radius:40px; box-shadow:0 5px 0 #A8141E;">お品書きを見る</a>
+      <a href="#access" style="text-decoration:none; background:#FFF6E9; color:#231812; font-family:'RocknRoll One',sans-serif; font-size:18px; padding:15px 34px; border-radius:40px; box-shadow:0 5px 0 #c9bca5;">お店までの行き方</a>
+    </div>
+  </section>
+
+  <!-- ===== 流れる帯 ===== -->
+  <div style="background:#231812; overflow:hidden; padding:14px 0; border-top:3px solid #F2B11C; border-bottom:3px solid #F2B11C;">
+    <div style="display:flex; white-space:nowrap; width:max-content; animation:marquee 22s linear infinite;">
+      <span style="font-family:'RocknRoll One',sans-serif; color:#F2B11C; font-size:22px; padding-right:40px;">たこ焼き 🐙 アツアツ 🐙 ねぎマヨ 🐙 明太チーズ 🐙 出汁醤油 🐙 大阪名物 🐙 食べ歩き 🐙 持ち帰りOK 🐙 </span>
+      <span style="font-family:'RocknRoll One',sans-serif; color:#F2B11C; font-size:22px; padding-right:40px;">たこ焼き 🐙 アツアツ 🐙 ねぎマヨ 🐙 明太チーズ 🐙 出汁醤油 🐙 大阪名物 🐙 食べ歩き 🐙 持ち帰りOK 🐙 </span>
+    </div>
+  </div>
+
+  <!-- ===== 店舗紹介 ===== -->
+  <section id="about" style="padding:clamp(60px,9vw,120px) clamp(20px,5vw,40px); max-width:1180px; margin:0 auto;">
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(30px,5vw,64px); align-items:center;">
+      <div style="flex:1 1 360px; position:relative;">
+        <img src="assets/takoyaki-making.jpg" alt="鉄板で焼くたこ焼き" style="width:100%; border-radius:18px; border:4px solid #231812; box-shadow:10px 10px 0 #F2B11C; object-fit:cover; aspect-ratio:4/3;">
+        <div style="position:absolute; transform:rotate(-8deg); bottom:-22px; right:-10px; background:#D81F2A; color:#FFF6E9; font-family:'Yuji Syuku',serif; font-size:22px; padding:14px 20px; border-radius:50%; width:96px; height:96px; display:flex; align-items:center; justify-content:center; text-align:center; line-height:1.2; box-shadow:0 6px 16px rgba(0,0,0,.25);">焼きたて</div>
+      </div>
+      <div style="flex:1 1 360px;">
+        <span style="display:inline-block; background:#231812; color:#FFF6E9; font-size:13px; font-weight:700; letter-spacing:3px; padding:6px 16px; border-radius:30px;">ABOUT US</span>
+        <h2 style="font-family:'RocknRoll One',sans-serif; font-size:clamp(28px,4.5vw,44px); margin:18px 0; line-height:1.3;">職人が一粒ずつ、<br><span style="color:#D81F2A;">心を込めて。</span></h2>
+        <p style="font-size:16px; line-height:2; color:#3a2a20; margin:0 0 16px;">大阪の下町で生まれた、変わらぬ味。秘伝の出汁を効かせたとろける生地に、プリッと大きな真だこをまるごと。一粒ずつ丁寧にひっくり返し、外はカリッ、中はとろ〜りに焼き上げます。</p>
+        <p style="font-size:16px; line-height:2; color:#3a2a20; margin:0;">アツアツのうちにどうぞ。ふらっと立ち寄れる、街のたこ焼き屋です。<br><span style="color:#9b8a78; font-size:14px;">※こちらの文章は仮テキストです。実際の内容に差し替えてください。</span></p>
+      </div>
+    </div>
+
+    <!-- こだわり3点 -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:22px; margin-top:clamp(40px,6vw,72px);">
+      <div style="background:#fff; border:3px solid #231812; border-radius:18px; padding:28px; text-align:center; box-shadow:6px 6px 0 #231812;">
+        <div style="width:64px; height:64px; margin:0 auto 14px; border-radius:50%; background:#D81F2A; display:flex; align-items:center; justify-content:center; font-size:30px;">🐙</div>
+        <h3 style="font-family:'RocknRoll One',sans-serif; font-size:21px; margin:0 0 8px;">大きな真だこ</h3>
+        <p style="font-size:14.5px; line-height:1.9; color:#5a4636; margin:0;">プリッと食感の大ぶりなタコを、贅沢にまるごと一粒ずつ。</p>
+      </div>
+      <div style="background:#fff; border:3px solid #231812; border-radius:18px; padding:28px; text-align:center; box-shadow:6px 6px 0 #231812;">
+        <div style="width:64px; height:64px; margin:0 auto 14px; border-radius:50%; background:#F2B11C; display:flex; align-items:center; justify-content:center; font-size:30px;">🍶</div>
+        <h3 style="font-family:'RocknRoll One',sans-serif; font-size:21px; margin:0 0 8px;">秘伝の出汁生地</h3>
+        <p style="font-size:14.5px; line-height:1.9; color:#5a4636; margin:0;">削り節と昆布をたっぷり。口の中でとろける、コクのある生地。</p>
+      </div>
+      <div style="background:#fff; border:3px solid #231812; border-radius:18px; padding:28px; text-align:center; box-shadow:6px 6px 0 #231812;">
+        <div style="width:64px; height:64px; margin:0 auto 14px; border-radius:50%; background:#3E7C3A; display:flex; align-items:center; justify-content:center; font-size:30px;">🥢</div>
+        <h3 style="font-family:'RocknRoll One',sans-serif; font-size:21px; margin:0 0 8px;">自家製ソース</h3>
+        <p style="font-size:14.5px; line-height:1.9; color:#5a4636; margin:0;">甘辛のバランスにこだわった、香り立つ特製ソース。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== メニュー ===== -->
+  <section id="menu" style="background:#D81F2A; padding:clamp(60px,9vw,120px) clamp(20px,5vw,40px); position:relative;">
+    <div style="text-align:center; margin-bottom:clamp(36px,5vw,60px);">
+      <span style="display:inline-block; background:#231812; color:#F2B11C; font-size:13px; font-weight:700; letter-spacing:3px; padding:6px 16px; border-radius:30px;">MENU</span>
+      <h2 style="font-family:'Yuji Syuku',serif; color:#FFF6E9; font-size:clamp(40px,7vw,72px); margin:14px 0 6px;">お品書き</h2>
+      <p style="color:#ffe6c9; font-weight:700; margin:0;">全品 たこ焼き8個入り・税込価格</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:24px; max-width:1180px; margin:0 auto;">
+
+      <div style="background:#FFF6E9; border-radius:18px; overflow:hidden; border:3px solid #231812; box-shadow:6px 6px 0 #231812;">
+        <img src="assets/takoyaki-wood.jpg" alt="定番ソースたこ焼き" style="width:100%; height:190px; object-fit:cover;">
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+            <h3 style="font-family:'RocknRoll One',sans-serif; font-size:20px; margin:0;">定番ソース</h3>
+            <span style="font-family:'RocknRoll One',sans-serif; color:#D81F2A; font-size:24px; white-space:nowrap;">¥500</span>
+          </div>
+          <p style="font-size:14px; color:#5a4636; margin:8px 0 0; line-height:1.7;">特製ソースに青のり・かつお節。まずはこれ。</p>
+        </div>
+      </div>
+
+      <div style="background:#FFF6E9; border-radius:18px; overflow:hidden; border:3px solid #231812; box-shadow:6px 6px 0 #231812;">
+        <img src="assets/takoyaki-mayo.jpg" alt="ねぎマヨたこ焼き" style="width:100%; height:190px; object-fit:cover;">
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+            <h3 style="font-family:'RocknRoll One',sans-serif; font-size:20px; margin:0;">ねぎマヨ</h3>
+            <span style="font-family:'RocknRoll One',sans-serif; color:#D81F2A; font-size:24px; white-space:nowrap;">¥550</span>
+          </div>
+          <p style="font-size:14px; color:#5a4636; margin:8px 0 0; line-height:1.7;">たっぷり九条ねぎとまろやかマヨの黄金コンビ。</p>
+        </div>
+      </div>
+
+      <div style="background:#FFF6E9; border-radius:18px; overflow:hidden; border:3px solid #231812; box-shadow:6px 6px 0 #231812;">
+        <img src="assets/takoyaki-nori.jpg" alt="明太マヨたこ焼き" style="width:100%; height:190px; object-fit:cover;">
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+            <h3 style="font-family:'RocknRoll One',sans-serif; font-size:20px; margin:0;">明太マヨ</h3>
+            <span style="font-family:'RocknRoll One',sans-serif; color:#D81F2A; font-size:24px; white-space:nowrap;">¥600</span>
+          </div>
+          <p style="font-size:14px; color:#5a4636; margin:8px 0 0; line-height:1.7;">ピリッと明太子と刻み海苔の人気メニュー。</p>
+        </div>
+      </div>
+
+      <div style="background:#FFF6E9; border-radius:18px; overflow:hidden; border:3px solid #231812; box-shadow:6px 6px 0 #231812;">
+        <img src="assets/takoyaki-aonori.jpg" alt="大阪塩たこ焼き" style="width:100%; height:190px; object-fit:cover;">
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+            <h3 style="font-family:'RocknRoll One',sans-serif; font-size:20px; margin:0;">大阪塩</h3>
+            <span style="font-family:'RocknRoll One',sans-serif; color:#D81F2A; font-size:24px; white-space:nowrap;">¥500</span>
+          </div>
+          <p style="font-size:14px; color:#5a4636; margin:8px 0 0; line-height:1.7;">生地の旨みを塩だけで。素材自慢の一皿。</p>
+        </div>
+      </div>
+
+      <div style="background:#FFF6E9; border-radius:18px; overflow:hidden; border:3px solid #231812; box-shadow:6px 6px 0 #231812;">
+        <img src="assets/takoyaki-wood2.jpg" alt="出汁醤油たこ焼き" style="width:100%; height:190px; object-fit:cover;">
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+            <h3 style="font-family:'RocknRoll One',sans-serif; font-size:20px; margin:0;">出汁醤油</h3>
+            <span style="font-family:'RocknRoll One',sans-serif; color:#D81F2A; font-size:24px; white-space:nowrap;">¥550</span>
+          </div>
+          <p style="font-size:14px; color:#5a4636; margin:8px 0 0; line-height:1.7;">あっさり出汁醤油。お酒のお供にも。</p>
+        </div>
+      </div>
+
+      <div style="background:#FFF6E9; border-radius:18px; overflow:hidden; border:3px solid #231812; box-shadow:6px 6px 0 #231812;">
+        <img src="assets/takoyaki-closeup.jpg" alt="チーズ明太たこ焼き" style="width:100%; height:190px; object-fit:cover;">
+        <div style="padding:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:10px;">
+            <h3 style="font-family:'RocknRoll One',sans-serif; font-size:20px; margin:0;">チーズ明太</h3>
+            <span style="font-family:'RocknRoll One',sans-serif; color:#D81F2A; font-size:24px; white-space:nowrap;">¥650</span>
+          </div>
+          <p style="font-size:14px; color:#5a4636; margin:8px 0 0; line-height:1.7;">とろけるチーズと明太子。背徳の濃厚コンビ。</p>
+        </div>
+      </div>
+
+    </div>
+    <p style="text-align:center; color:#ffe6c9; margin-top:28px; font-size:14px;">※価格・メニューは仮の内容です。実際の商品に差し替えてご利用ください。</p>
+  </section>
+
+  <!-- ===== アクセス ===== -->
+  <section id="access" style="padding:clamp(60px,9vw,120px) clamp(20px,5vw,40px); max-width:1180px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:clamp(36px,5vw,56px);">
+      <span style="display:inline-block; background:#231812; color:#FFF6E9; font-size:13px; font-weight:700; letter-spacing:3px; padding:6px 16px; border-radius:30px;">ACCESS</span>
+      <h2 style="font-family:'Yuji Syuku',serif; font-size:clamp(40px,7vw,72px); margin:14px 0 0;">店舗案内</h2>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(24px,4vw,44px); align-items:stretch;">
+      <!-- 地図 -->
+      <div style="flex:1 1 380px; min-height:320px; border-radius:18px; border:4px solid #231812; box-shadow:8px 8px 0 #F2B11C; position:relative; overflow:hidden; background-color:#e8e2d3; background-image:linear-gradient(#d8d0bd 1px, transparent 1px), linear-gradient(90deg, #d8d0bd 1px, transparent 1px); background-size:34px 34px;">
+        <div style="position:absolute; top:18%; left:0; right:0; height:18px; background:#c7bda6;"></div>
+        <div style="position:absolute; top:0; bottom:0; left:62%; width:16px; background:#c7bda6;"></div>
+        <div style="position:absolute; top:46%; left:50%; transform:translate(-50%,-100%); display:flex; flex-direction:column; align-items:center;">
+          <div style="width:44px; height:44px; background:#D81F2A; border:3px solid #231812; border-radius:50% 50% 50% 0; transform:rotate(45deg); box-shadow:0 6px 12px rgba(0,0,0,.25);"></div>
+          <span style="margin-top:14px; background:#231812; color:#FFF6E9; font-size:13px; font-weight:700; padding:5px 12px; border-radius:20px; white-space:nowrap;">大阪たこ焼き屋</span>
+        </div>
+        <a href="#" data-prevent style="position:absolute; bottom:16px; right:16px; text-decoration:none; background:#231812; color:#FFF6E9; font-weight:700; font-size:14px; padding:11px 18px; border-radius:30px;">Googleマップで開く ↗</a>
+      </div>
+      <!-- 情報 -->
+      <div style="flex:1 1 320px; display:flex; flex-direction:column; gap:0; background:#fff; border:3px solid #231812; border-radius:18px; overflow:hidden; box-shadow:6px 6px 0 #231812;">
+        <div style="display:flex; gap:14px; padding:20px 22px; border-bottom:2px dashed #d8cdb8;">
+          <span style="font-weight:900; color:#D81F2A; min-width:84px;">住所</span>
+          <span style="line-height:1.7;">〒540-0000<br>大阪府大阪市中央区○○ 1-2-3<br><span style="color:#9b8a78; font-size:13px;">※仮の住所です</span></span>
+        </div>
+        <div style="display:flex; gap:14px; padding:20px 22px; border-bottom:2px dashed #d8cdb8;">
+          <span style="font-weight:900; color:#D81F2A; min-width:84px;">電話</span>
+          <span style="line-height:1.7;">06-0000-0000</span>
+        </div>
+        <div style="display:flex; gap:14px; padding:20px 22px; border-bottom:2px dashed #d8cdb8;">
+          <span style="font-weight:900; color:#D81F2A; min-width:84px;">営業時間</span>
+          <span style="line-height:1.7;">11:00 〜 21:00<br>（L.O. 20:30）</span>
+        </div>
+        <div style="display:flex; gap:14px; padding:20px 22px; border-bottom:2px dashed #d8cdb8;">
+          <span style="font-weight:900; color:#D81F2A; min-width:84px;">定休日</span>
+          <span style="line-height:1.7;">水曜日</span>
+        </div>
+        <div style="display:flex; gap:14px; padding:20px 22px;">
+          <span style="font-weight:900; color:#D81F2A; min-width:84px;">最寄り</span>
+          <span style="line-height:1.7;">地下鉄○○駅 ②番出口 徒歩3分</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== お問い合わせ ===== -->
+  <section id="contact" style="background:#231812; padding:clamp(60px,9vw,120px) clamp(20px,5vw,40px);">
+    <div style="max-width:680px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:clamp(32px,5vw,48px);">
+        <span style="display:inline-block; background:#F2B11C; color:#231812; font-size:13px; font-weight:700; letter-spacing:3px; padding:6px 16px; border-radius:30px;">CONTACT</span>
+        <h2 style="font-family:'Yuji Syuku',serif; color:#FFF6E9; font-size:clamp(40px,7vw,72px); margin:14px 0 6px;">お問い合わせ</h2>
+        <p style="color:#cbb9a6; margin:0;">ご予約・出店のご相談など、お気軽にどうぞ。</p>
+      </div>
+
+      <div id="contact-success" style="display:none; background:#FFF6E9; border-radius:18px; padding:48px 24px; text-align:center; border:3px solid #F2B11C;">
+        <div style="font-size:52px; margin-bottom:10px;">🐙</div>
+        <h3 style="font-family:'RocknRoll One',sans-serif; font-size:24px; margin:0 0 8px;">送信しました！</h3>
+        <p style="color:#5a4636; margin:0;">お問い合わせありがとうございます。<br>担当者より折り返しご連絡いたします。</p>
+      </div>
+
+      <form id="contact-form" style="display:flex; flex-direction:column; gap:18px;">
+        <label style="display:flex; flex-direction:column; gap:7px; color:#FFF6E9; font-weight:700; font-size:14px;">お名前
+          <input type="text" required placeholder="大阪 太郎" style="padding:13px 15px; border-radius:11px; border:2px solid #5a4636; background:#FFF6E9; font-size:15px; outline:none;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:7px; color:#FFF6E9; font-weight:700; font-size:14px;">メールアドレス
+          <input type="email" required placeholder="you@example.com" style="padding:13px 15px; border-radius:11px; border:2px solid #5a4636; background:#FFF6E9; font-size:15px; outline:none;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:7px; color:#FFF6E9; font-weight:700; font-size:14px;">電話番号（任意）
+          <input type="tel" placeholder="090-0000-0000" style="padding:13px 15px; border-radius:11px; border:2px solid #5a4636; background:#FFF6E9; font-size:15px; outline:none;">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:7px; color:#FFF6E9; font-weight:700; font-size:14px;">お問い合わせ内容
+          <textarea required rows="5" placeholder="ご用件をご記入ください" style="padding:13px 15px; border-radius:11px; border:2px solid #5a4636; background:#FFF6E9; font-size:15px; outline:none; resize:vertical;"></textarea>
+        </label>
+        <button type="submit" style="margin-top:6px; background:#D81F2A; color:#FFF6E9; font-family:'RocknRoll One',sans-serif; font-size:19px; border:none; padding:16px; border-radius:40px; cursor:pointer; box-shadow:0 5px 0 #A8141E;">送信する</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== フッター / SNS ===== -->
+  <footer style="background:#FFF6E9; padding:clamp(48px,7vw,80px) clamp(20px,5vw,40px) 0;">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; gap:36px; justify-content:space-between; align-items:flex-start;">
+      <div style="flex:1 1 260px;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <span style="width:40px; height:40px; border-radius:50%; background:#D81F2A; display:flex; align-items:center; justify-content:center; color:#FFF6E9; font-family:'Yuji Syuku',serif; font-size:23px;">蛸</span>
+          <span style="font-family:'Yuji Syuku',serif; font-size:25px;">大阪たこ焼き屋</span>
+        </div>
+        <p style="color:#5a4636; line-height:1.9; font-size:14px; margin:0; max-width:320px;">本場大阪の味を、焼きたてアツアツで。街のみんなに愛される、たこ焼き屋を目指して。</p>
+      </div>
+
+      <div style="flex:0 1 auto;">
+        <h4 style="font-family:'RocknRoll One',sans-serif; font-size:16px; margin:0 0 14px;">SNSでも発信中！</h4>
+        <div style="display:flex; gap:14px;">
+          <a href="#" data-prevent aria-label="Instagram" style="width:52px; height:52px; border-radius:16px; background:linear-gradient(45deg,#feda75,#d62976,#962fbf); display:flex; align-items:center; justify-content:center; box-shadow:0 4px 0 rgba(0,0,0,.15);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1.2" fill="#fff" stroke="none"></circle></svg>
+          </a>
+          <a href="#" data-prevent aria-label="X" style="width:52px; height:52px; border-radius:16px; background:#231812; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 0 rgba(0,0,0,.2);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M18.9 2H22l-7.5 8.6L23 22h-6.8l-5.3-6.9L4.8 22H1.7l8-9.2L1 2h7l4.8 6.3L18.9 2Zm-1.2 18h1.9L7.2 4H5.2l12.5 16Z"></path></svg>
+          </a>
+          <a href="#" data-prevent aria-label="LINE" style="width:52px; height:52px; border-radius:16px; background:#06C755; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:900; font-size:14px; box-shadow:0 4px 0 rgba(0,0,0,.2);">LINE</a>
+          <a href="#" data-prevent aria-label="YouTube" style="width:52px; height:52px; border-radius:16px; background:#FF0000; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 0 rgba(0,0,0,.2);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M21.6 7.2s-.2-1.4-.8-2c-.8-.8-1.6-.8-2-.9C16 4 12 4 12 4s-4 0-6.8.3c-.4 0-1.2.1-2 .9-.6.6-.8 2-.8 2S2 8.9 2 10.6v1.6c0 1.7.2 3.4.2 3.4s.2 1.4.8 2c.8.8 1.8.8 2.3.9 1.7.2 6.7.3 6.7.3s4 0 6.8-.3c.4 0 1.2-.1 2-.9.6-.6.8-2 .8-2s.2-1.7.2-3.4v-1.6c0-1.7-.2-3.4-.2-3.4ZM10 14.6V9.4l4.8 2.6-4.8 2.6Z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div style="flex:0 1 auto;">
+        <h4 style="font-family:'RocknRoll One',sans-serif; font-size:16px; margin:0 0 14px;">メニュー</h4>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="#about" style="text-decoration:none; color:#5a4636; font-size:14px; font-weight:700;">店舗紹介</a>
+          <a href="#menu" style="text-decoration:none; color:#5a4636; font-size:14px; font-weight:700;">お品書き</a>
+          <a href="#access" style="text-decoration:none; color:#5a4636; font-size:14px; font-weight:700;">アクセス</a>
+          <a href="#contact" style="text-decoration:none; color:#5a4636; font-size:14px; font-weight:700;">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:14px; margin-top:48px; background: repeating-linear-gradient(90deg, #D81F2A 0 30px, #231812 30px 60px);"></div>
+    <p style="text-align:center; color:#9b8a78; font-size:13px; padding:18px 0; margin:0;">© 2026 大阪たこ焼き屋 ／ Osaka Takoyaki. All rights reserved.</p>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var HEADER_OFFSET = 88;
+    var menu = document.getElementById('mobile-menu');
+
+    function openMenu()  { menu.classList.add('open'); }
+    function closeMenu() { menu.classList.remove('open'); }
+
+    document.getElementById('hamburger').addEventListener('click', openMenu);
+    document.getElementById('menu-close').addEventListener('click', closeMenu);
+
+    // ページ内アンカーをヘッダー分オフセットしてスムーズスクロール
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var href = a.getAttribute('href');
+        if (a.hasAttribute('data-prevent') || href === '#') { e.preventDefault(); return; }
+        var target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        closeMenu();
+        var y = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
+
+    // お問い合わせフォーム（デモ：実送信なし）
+    var form = document.getElementById('contact-form');
+    var success = document.getElementById('contact-success');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  })();
+</script>
+</body>
+</html>

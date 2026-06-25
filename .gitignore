@@ -1,0 +1,9 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+
+# build helper (リポジトリには含めない)
+process_assets.py
+__pycache__/
